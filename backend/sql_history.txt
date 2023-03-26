@@ -1,0 +1,98 @@
+-2022-5-24
+
+ALTER TABLE admins ADD COLUMN is2fa boolean;
+ALTER TABLE admins ADD COLUMN token_2fa character varying(255);
+
+ALTER TABLE domains ADD COLUMN icon character varying(255);
+
+-2022-6-29
+
+
+CREATE TABLE public.gw_groups (
+    id integer NOT NULL,
+    name citext NOT NULL,
+    domain_id integer,
+    status character varying(1)
+);
+
+
+ALTER TABLE public.gw_groups OWNER TO postgres;
+
+CREATE SEQUENCE public.gw_groups_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.gw_groups_id_seq OWNER TO postgres;
+
+ALTER SEQUENCE public.gw_groups_id_seq OWNED BY public.gw_groups.id;
+
+ALTER TABLE ONLY public.gw_groups ALTER COLUMN id SET DEFAULT nextval('public.gw_groups_id_seq'::regclass);
+
+
+ALTER TABLE ONLY public.gw_groups
+    ADD CONSTRAINT gw_groups_id_key UNIQUE (id);
+
+ALTER TABLE ONLY public.gw_groups
+    ADD CONSTRAINT gw_groups_name_domain_id_key UNIQUE (name, domain_id);
+
+
+ALTER TABLE ONLY public.gw_groups
+    ADD CONSTRAINT gw_groups_pkey PRIMARY KEY (id);
+
+
+
+
+CREATE TABLE public.gw_group_members (
+    id integer NOT NULL,
+    gw_group_id integer NOT NULL,
+    gateway_id integer NOT NULL
+);
+
+
+ALTER TABLE public.gw_group_members OWNER TO postgres;
+
+
+CREATE SEQUENCE public.gw_group_members_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.gw_group_members_id_seq OWNER TO postgres;
+
+
+ALTER SEQUENCE public.gw_group_members_id_seq OWNED BY public.gw_group_members.id;
+
+
+ALTER TABLE ONLY public.gw_group_members ALTER COLUMN id SET DEFAULT nextval('public.gw_group_members_id_seq'::regclass);
+
+
+ALTER TABLE ONLY public.gw_group_members
+    ADD CONSTRAINT gw_group_members_pkey PRIMARY KEY (id);
+
+
+ALTER TABLE ONLY public.gw_group_members
+    ADD CONSTRAINT fk_gw_group_gateway_id FOREIGN KEY (gateway_id) REFERENCES public.services(id) NOT VALID;
+
+
+ALTER TABLE ONLY public.gw_group_members
+    ADD CONSTRAINT fk_gw_group_id_id FOREIGN KEY (gw_group_id) REFERENCES public.gw_groups(id);
+
+
+-2022-7-5-
+
+ALTER TABLE options ADD COLUMN domain_id integer;
+
+ALTER TABLE users ADD COLUMN email character varying(255);
+
+
+ALTER TABLE services ADD COLUMN email character varying(255);
+ALTER TABLE admins ADD COLUMN email character varying(255);

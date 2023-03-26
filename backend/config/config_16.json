@@ -1,0 +1,12 @@
+{
+  "emailHost": "sdfsdf",
+  "emailUsername": "sdf",
+  "emailPassword": "sdf",
+  "isEmailNotification": false,
+  "possibleSendingEmail": false,
+  "password_generate": true,
+  "email_option": "smtp",
+  "sendgridKey": "sdf",
+  "emailSender": "sdfsdf",
+  "domain_id": 16
+}

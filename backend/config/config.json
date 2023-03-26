@@ -1,0 +1,7 @@
+{
+  "emailHost": "smtp.gmail.com",
+  "emailPassword": "glowGlow1@",
+  "emailUsername": "nxwang00@gmail.com",
+  "password_generate": true,
+  "possibleSendingEmail": false
+}

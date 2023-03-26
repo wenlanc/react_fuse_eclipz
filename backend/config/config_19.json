@@ -1,0 +1,9 @@
+{
+  "emailHost": "sdf",
+  "emailUsername": "123",
+  "emailPassword": "123",
+  "isEmailNotification": true,
+  "possibleSendingEmail": true,
+  "password_generate": false,
+  "domain_id": 19
+}

@@ -1,0 +1,9 @@
+{
+  "emailHost": "hhhh",
+  "emailUsername": "hhhh",
+  "emailPassword": "test234234",
+  "isEmailNotification": true,
+  "possibleSendingEmail": true,
+  "password_generate": true,
+  "domain_id": 20
+}

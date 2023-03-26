@@ -1,0 +1,41 @@
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/ak9c11lfqeck/public_html/testNodeServer"
+PassengerBaseURI "/"
+PassengerNodejs "/home/ak9c11lfqeck/nodevenv/public_html/testNodeServer/10/bin/node"
+PassengerAppType node
+PassengerStartupFile index.js
+PassengerAppLogFile "/home/ak9c11lfqeck/NodeCheck/debug.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/ak9c11lfqeck/public_html/test.mdt.washim.net"
+PassengerBaseURI "/"
+PassengerNodejs "/home/ak9c11lfqeck/nodevenv/public_html/test.mdt.washim.net/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/ak9c11lfqeck/public_html/nodeserver.mdt.washim.net"
+PassengerBaseURI "/"
+PassengerNodejs "/home/ak9c11lfqeck/nodevenv/public_html/nodeserver.mdt.washim.net/10/bin/node"
+PassengerAppType node
+PassengerStartupFile index.js
+PassengerAppLogFile "/home/ak9c11lfqeck/NodeCheck/debug.log"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>

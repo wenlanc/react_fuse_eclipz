@@ -1,0 +1,12 @@
+{
+  "emailHost": "test123",
+  "emailUsername": "test123",
+  "emailPassword": "test",
+  "isEmailNotification": true,
+  "possibleSendingEmail": true,
+  "password_generate": true,
+  "domain_id": 1,
+  "email_option": "sendgrid",
+  "emailSender": "sdfsdf",
+  "sendgridKey": "sdfsdfsdf"
+}

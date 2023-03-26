@@ -1,0 +1,12 @@
+{
+  "emailHost": "",
+  "emailUsername": "",
+  "emailPassword": "",
+  "isEmailNotification": false,
+  "possibleSendingEmail": false,
+  "password_generate": true,
+  "email_option": "smtp",
+  "sendgridKey": "",
+  "emailSender": "",
+  "domain_id": 17
+}
